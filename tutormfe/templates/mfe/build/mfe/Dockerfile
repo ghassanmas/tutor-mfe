@@ -1,4 +1,4 @@
-FROM docker.io/node:16.14-bullseye-slim AS base
+FROM docker.io/node:16.15.1-bullseye-slim AS base
 
 RUN apt update \
   && apt install -y git \
