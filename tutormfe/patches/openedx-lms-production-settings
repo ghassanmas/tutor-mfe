@@ -40,13 +40,16 @@ MFE_CONFIG = {
     "USER_INFO_COOKIE_NAME": "user-info"
 }
 
+
+MFE_CONFIG_OVERRIDES = {
 {% for app in iter_values_named(suffix="MFE_APP") %}
-MFE_CONFIG_{{app.get('name') | upper }} = {
+"{{app.get('name')}}": {
 {%- for key, value in app.get("env", {}).get("production", {}).items() %}
 
  "{{ key }}": "{{ value }}",
 
 {%- endfor %}
-}
+},
 {% endfor %}
+}
 # Ends Dynamic config API settings
