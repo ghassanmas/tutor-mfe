@@ -4,5 +4,6 @@
         max_size 2MB
     }
     encode gzip
+    reverse_proxy /api/v1/mfe_config* {{ LMS_HOST }}{$default_site_port}
     import proxy "mfe:8002"
 }
