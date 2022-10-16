@@ -22,6 +22,6 @@ SEGMENT_KEY=
 SITE_NAME={{ PLATFORM_NAME|replace("'", "'\\''")|replace(" ", "\ ") }}
 STUDIO_BASE_URL={{ "https" if ENABLE_HTTPS else "http" }}://{{ CMS_HOST }}
 USER_INFO_COOKIE_NAME=user-info
-MFE_CONFIG_API_URL=/api/v1/mfe_config
+MFE_CONFIG_API_URL=/api/mfe_config/v1
 
 {{ patch("mfe-env-production") }}
