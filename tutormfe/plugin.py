@@ -21,7 +21,7 @@ config = {
                 "production": {
                     "COACHING_ENABLED": "",
                     "ENABLE_DEMOGRAPHICS_COLLECTION": "",
-                    "APP_ID":"ACCOUNT",
+                    "APP_ID":"account",
                 },
             },
         },
@@ -31,7 +31,7 @@ config = {
             "port": 1994,
             "env":{
               "production":{
-                "APP_ID": "GRADEBOOK",
+                "APP_ID": "gradebook",
                 },
             },
         },
@@ -41,7 +41,7 @@ config = {
             "port": 2000,
             "env":{
               "production":{
-                "APP_ID": "LEARNING",
+                "APP_ID": "learning",
                 },
             },
         },
@@ -52,7 +52,7 @@ config = {
              "env": {
                 "production": {
                     "ENABLE_LEARNER_RECORD_MFE": "true",
-                    "APP_ID": "PROFILE",
+                    "APP_ID": "profile",
                 },
             },
         },
