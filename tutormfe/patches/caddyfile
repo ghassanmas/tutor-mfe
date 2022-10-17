@@ -4,6 +4,6 @@
         max_size 2MB
     }
     encode gzip
-    redir /api/mfe_config/v1* {{ "https" if ENABLE_HTTPS else "http" }}://{{ LMS_HOST }}{uri}
+    reverse_proxy /api/mfe_config/v1* lms:8000
     import proxy "mfe:8002"
 }
