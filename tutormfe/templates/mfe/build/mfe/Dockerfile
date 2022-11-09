@@ -54,6 +54,7 @@ COPY --from={{ app["name"] }}-src /openedx/app /openedx/app
 COPY --from={{ app["name"] }}-i18n /openedx/app/src/i18n/messages /openedx/app/src/i18n/messages
 ENV PUBLIC_PATH='/{{ app["name"] }}/'
 EXPOSE {{ app['port'] }}
+ENV APP_ID={{ app["name"] }}
 CMD ["npm", "run", "start"]
 
 {% endfor %}
@@ -68,7 +69,7 @@ RUN touch /openedx/env/production.override \
   && echo "{{ key }}='{{ value }}'" >> /openedx/env/production.override \
   {%- endfor %}
   && echo "done setting production overrides"
-RUN bash -c "set -a && source /openedx/env/production && source /openedx/env/production.override && npm run build"
+RUN bash -c "set -a && source /openedx/env/production && source /openedx/env/production.override && APP_ID={{ app["name"] }} npm run build"
 
 {% endfor %}
 

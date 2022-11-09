@@ -17,33 +17,16 @@ config = {
             "name": "account",
             "repository": "https://github.com/edx/frontend-app-account",
             "port": 1997,
-            "env": {
-                "production": {
-                    "COACHING_ENABLED": "",
-                    "ENABLE_DEMOGRAPHICS_COLLECTION": "",
-                    "APP_ID":"account",
-                },
-            },
         },
         "GRADEBOOK_MFE_APP": {
             "name": "gradebook",
             "repository": "https://github.com/edx/frontend-app-gradebook",
             "port": 1994,
-            "env":{
-              "production":{
-                "APP_ID": "gradebook",
-                },
-            },
         },
         "LEARNING_MFE_APP": {
             "name": "learning",
             "repository": "https://github.com/edx/frontend-app-learning",
             "port": 2000,
-            "env":{
-              "production":{
-                "APP_ID": "learning",
-                },
-            },
         },
         "PROFILE_MFE_APP": {
             "name": "profile",
@@ -52,7 +35,6 @@ config = {
              "env": {
                 "production": {
                     "ENABLE_LEARNER_RECORD_MFE": "true",
-                    "APP_ID": "profile",
                 },
             },
         },
