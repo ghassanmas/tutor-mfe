@@ -69,8 +69,11 @@ RUN touch /openedx/env/production.override \
   && echo "{{ key }}='{{ value }}'" >> /openedx/env/production.override \
   {%- endfor %}
   && echo "done setting production overrides"
-RUN bash -c "set -a && source /openedx/env/production && source /openedx/env/production.override && APP_ID={{ app["name"] }} npm run build"
-
+COPY ./webpack.prod.tutor.config.js ./webpack.prod.tutor.config.js
+RUN bash -c "set -a && source /openedx/env/production && source /openedx/env/production.override && APP_ID={{ app["name"] }} npm run build -- --config ./webpack.prod.tutor.config.js"
+{% if MFE_REMOVE_WEBPACK_BUILD_CACHE %}
+RUN rm -rf .cache
+{% endif %}
 {% endfor %}
 
 ####### final production image with all static assets

@@ -13,6 +13,7 @@ config = {
         "HOST": "apps.{{ LMS_HOST }}",
         "COMMON_VERSION": "{{ OPENEDX_COMMON_VERSION }}",
         "CADDY_DOCKER_IMAGE": "{{ DOCKER_IMAGE_CADDY }}",
+        "REMOVE_WEBPACK_BUILD_CACHE": False,
         "ACCOUNT_MFE_APP": {
             "name": "account",
             "repository": "https://github.com/openedx/frontend-app-account",
