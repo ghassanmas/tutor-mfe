@@ -1,0 +1,6 @@
+{% if MFE_AUTHORING_MFE_APP %}
+LOGIN_REDIRECT_WHITELIST.append("{{ MFE_HOST }}")
+CORS_ORIGIN_WHITELIST.append("{% if ENABLE_HTTPS %}https://{% else %}http://{% endif %}{{ MFE_HOST }}")
+CSRF_TRUSTED_ORIGINS.append("{{ MFE_HOST }}")
+COURSE_AUTHORING_MICROFRONTEND_URL ="{% if ENABLE_HTTPS %}https://{% else %}http://{% endif %}{{ MFE_HOST }}/authoring"
+{% endif %}

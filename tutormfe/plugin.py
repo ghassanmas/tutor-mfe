@@ -15,29 +15,48 @@ config = {
         "CADDY_DOCKER_IMAGE": "{{ DOCKER_IMAGE_CADDY }}",
         "ACCOUNT_MFE_APP": {
             "name": "account",
-            "repository": "https://github.com/edx/frontend-app-account",
+            "repository": "https://github.com/openedx/frontend-app-account",
             "port": 1997,
+            "version":"open-release/olive.master",
         },
         "GRADEBOOK_MFE_APP": {
             "name": "gradebook",
-            "repository": "https://github.com/edx/frontend-app-gradebook",
+            "repository": "https://github.com/ghassanmas/frontend-app-gradebook",
             "port": 1994,
+            "version":"open-release/olive.master",
         },
         "LEARNING_MFE_APP": {
             "name": "learning",
-            "repository": "https://github.com/edx/frontend-app-learning",
+            "repository": "https://github.com/ghassanmas/frontend-app-learning",
             "port": 2000,
+            "version":"open-release/olive.master",
         },
         "PROFILE_MFE_APP": {
             "name": "profile",
-            "repository": "https://github.com/edx/frontend-app-profile",
+            "repository": "https://github.com/ghassanmas/frontend-app-profile",
             "port": 1995,
+          "version":"open-release/olive.master",
              "env": {
                 "production": {
                     "ENABLE_LEARNER_RECORD_MFE": "true",
                 },
             },
         },
+     "AUTHORING_MFE_APP": {
+            "name": "authoring",
+            "repository": "https://github.com/openedx/frontend-app-course-authoring",
+            "port": 2001,
+            "version":"open-release/olive.master",
+        },
+    "DISCUSSIONS_MFE_APP": {
+            "name": "discussions",
+            "repository": "https://github.com/openedx/frontend-app-discussions",
+            "port": 2002,
+            "version":"master",
+        },
+
+
+        
     },
 }
 
